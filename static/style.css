@@ -1,0 +1,87 @@
+body {
+    font-family: "JetBrains Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    max-width: 70%;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fdf6e3; /* Light paper-like background */
+    color: #073642;
+    position: relative;
+}
+
+.content {
+    display: flex;
+    padding: 20px;
+    box-shadow: 0 0px 20px rgba(0,0,0,0.1);
+}
+
+.line-numbers {
+    color: #002b36;
+    text-align: right;
+    padding-right: 20px;
+    border-right: 1px solid #ddd;
+    margin-right: 20px;
+    user-select: none;
+}
+
+.line-number {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+h1, h2 {
+    color: #859900; /* Vim-inspired blue for headings */
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+/* Paragraphs */
+p {
+    margin: 0.5rem 0;
+}
+
+a {
+    color: #6c71c4;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 1200px) {
+    /* Fullscreen layout for mobile */
+    body {
+        max-width: 100%; /* Remove max-width restriction */
+        paddding: 0;
+        margin: 0;
+    }
+
+    .content {
+        width: 100%; /* Make content span the entire width */
+        margin: 0; /* Remove margin for full-width text */
+        padding: 0; /* Add padding to prevent text from touching edges */
+        box-shadow: 0 0 0;
+    }
+
+    /* Adjust text size for mobile */
+    h1 {
+        font-size: 1.6rem; /* Smaller heading font size */
+    }
+
+    h2 {
+        font-size: 1.3rem; /* Smaller subheading font size */
+    }
+
+    p, ul li {
+        font-size: 1rem; /* Standard text size */
+        line-height: 1.8; /* Increase line height for readability */
+    }
+
+    a {
+        font-size: 1rem; /* Make links easier to read */
+    }
+}
