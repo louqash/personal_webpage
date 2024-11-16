@@ -6,7 +6,7 @@ body {
     max-width: 70%;
     margin: 40px auto;
     padding: 20px;
-    background-color: #fdf6e3; /* Light paper-like background */
+    background-color: #fdf6e3;
     color: #073642;
     position: relative;
 }
@@ -33,12 +33,11 @@ body {
 }
 
 h1, h2 {
-    color: #859900; /* Vim-inspired blue for headings */
+    color: #859900;
     margin-bottom: 1rem;
     font-size: 1.8rem;
 }
 
-/* Paragraphs */
 p {
     margin: 0.5rem 0;
 }
@@ -53,38 +52,37 @@ a:hover {
 }
 
 @media screen and (max-width: 1200px) {
-    /* Fullscreen layout for mobile */
     body {
-        max-width: 100%; /* Remove max-width restriction */
+        max-width: 100%;
         paddding: 0;
         margin: 0;
     }
 
     .content {
-        width: 100%; /* Make content span the entire width */
-        margin: 0; /* Remove margin for full-width text */
-        padding: 0; /* Add padding to prevent text from touching edges */
+        width: 100%;
+        margin: 0;
+        padding: 0;
         box-shadow: 0 0 0;
     }
 
     .line-number {
-        font-size: 1.6rem; /* Standard text size */
+        font-size: 1.4rem;
     }
-    /* Adjust text size for mobile */
+
     h1 {
-        font-size: 2.9rem; /* Smaller heading font size */
+        font-size: 2.9rem;
     }
 
     h2 {
-        font-size: 2.2rem; /* Smaller subheading font size */
+        font-size: 2.2rem;
     }
 
     p, ul li {
-        font-size: 1.4rem; /* Standard text size */
-        line-height: 1.6; /* Increase line height for readability */
+        font-size: 1.4rem;
+        line-height: 1.6;
     }
 
     a {
-        font-size: 1.4rem; /* Make links easier to read */
+        font-size: 1.4rem;
     }
 }
