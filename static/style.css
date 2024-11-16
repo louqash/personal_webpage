@@ -69,19 +69,19 @@ a:hover {
 
     /* Adjust text size for mobile */
     h1 {
-        font-size: 1.6rem; /* Smaller heading font size */
+        font-size: 1.8rem; /* Smaller heading font size */
     }
 
     h2 {
-        font-size: 1.3rem; /* Smaller subheading font size */
+        font-size: 1.5rem; /* Smaller subheading font size */
     }
 
     p, ul li {
-        font-size: 1rem; /* Standard text size */
+        font-size: 1.2rem; /* Standard text size */
         line-height: 1.8; /* Increase line height for readability */
     }
 
     a {
-        font-size: 1rem; /* Make links easier to read */
+        font-size: 1.2rem; /* Make links easier to read */
     }
 }
