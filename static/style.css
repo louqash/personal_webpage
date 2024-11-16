@@ -67,21 +67,24 @@ a:hover {
         box-shadow: 0 0 0;
     }
 
+    .line-number {
+        font-size: 1.6rem; /* Standard text size */
+    }
     /* Adjust text size for mobile */
     h1 {
-        font-size: 1.8rem; /* Smaller heading font size */
+        font-size: 2.9rem; /* Smaller heading font size */
     }
 
     h2 {
-        font-size: 1.5rem; /* Smaller subheading font size */
+        font-size: 2.2rem; /* Smaller subheading font size */
     }
 
     p, ul li {
-        font-size: 1.2rem; /* Standard text size */
-        line-height: 1.8; /* Increase line height for readability */
+        font-size: 1.4rem; /* Standard text size */
+        line-height: 1.6; /* Increase line height for readability */
     }
 
     a {
-        font-size: 1.2rem; /* Make links easier to read */
+        font-size: 1.4rem; /* Make links easier to read */
     }
 }
