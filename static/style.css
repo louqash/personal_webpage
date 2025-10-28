@@ -83,6 +83,24 @@ a:hover {
     text-decoration: underline;
 }
 
+.theme-hint {
+    position: fixed;
+    top: 23px;
+    right: 65px;
+    z-index: 999;
+    font-size: 0.85rem;
+    color: var(--text-color);
+    opacity: 0.6;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: opacity 0.3s ease, color 0.3s ease;
+}
+
+.theme-hint-arrow {
+    font-size: 1.2rem;
+}
+
 .theme-toggle {
     position: fixed;
     top: 20px;
@@ -207,6 +225,16 @@ a:hover {
     }
 
     a {
+        font-size: 1.4rem;
+    }
+
+    .theme-hint {
+        top: 33px;
+        right: 85px;
+        font-size: 1.1rem;
+    }
+
+    .theme-hint-arrow {
         font-size: 1.4rem;
     }
 
