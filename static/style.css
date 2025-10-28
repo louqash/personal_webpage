@@ -85,7 +85,7 @@ a:hover {
 
 .theme-hint {
     position: fixed;
-    top: 23px;
+    top: 18px;
     right: 65px;
     z-index: 999;
     font-size: 0.85rem;
@@ -103,18 +103,21 @@ a:hover {
 
 .theme-toggle {
     position: fixed;
-    top: 20px;
-    right: 20px;
+    top: 0px;
+    right: 0px;
     background: none;
     border: none;
-    padding: 0;
+    padding: 20px 20px 20px 140px;
     cursor: pointer;
     z-index: 1000;
-    width: 32px;
-    height: 32px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
+}
+
+.sun-and-moon {
+    width: 24px;
+    height: 24px;
 }
 
 .sun-and-moon > :is(.moon, .sun, .sun-beams) {
@@ -239,10 +242,9 @@ a:hover {
     }
 
     .theme-toggle {
-        top: 20px;
-        right: 20px;
-        width: 70px;
-        height: 70px;
+        top: 0px;
+        right: 0px;
+        padding: 25px 25px 25px 170px;
     }
 
     .sun-and-moon {
