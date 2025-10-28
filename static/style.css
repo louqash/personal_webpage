@@ -208,24 +208,24 @@ a:hover {
     }
 
     .line-number {
-        font-size: 1.4rem;
+        font-size: 1.6rem;
     }
 
     h1 {
-        font-size: 2.9rem;
+        font-size: 3.2rem;
     }
 
     h2 {
-        font-size: 2.2rem;
+        font-size: 2.6rem;
     }
 
     p, ul li {
-        font-size: 1.4rem;
+        font-size: 1.6rem;
         line-height: 1.6;
     }
 
     a {
-        font-size: 1.4rem;
+        font-size: 1.6rem;
     }
 
     .theme-hint {
@@ -241,12 +241,12 @@ a:hover {
     .theme-toggle {
         top: 20px;
         right: 20px;
-        width: 56px;
-        height: 56px;
+        width: 70px;
+        height: 70px;
     }
 
     .sun-and-moon {
-        width: 36px;
-        height: 36px;
+        width: 48px;
+        height: 48px;
     }
 }
