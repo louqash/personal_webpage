@@ -113,6 +113,7 @@ a:hover {
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .sun-and-moon {
