@@ -1,3 +1,30 @@
+@import "https://unpkg.com/open-props/easings.min.css";
+
+/* Theme colors */
+:root {
+    --bg-color: #fdf6e3;
+    --text-color: #073642;
+    --heading-color: #859900;
+    --link-color: #6c71c4;
+    --line-number-color: #002b36;
+    --border-color: #ddd;
+    --shadow-color: rgba(0,0,0,0.1);
+    --icon-fill: #073642;
+    --icon-fill-hover: #859900;
+}
+
+[data-theme="dark"] {
+    --bg-color: #1e1e2e;
+    --text-color: #cdd6f4;
+    --heading-color: #a6e3a1;
+    --link-color: #b4befe;
+    --line-number-color: #9399b2;
+    --border-color: #45475a;
+    --shadow-color: rgba(0,0,0,0.3);
+    --icon-fill: #cdd6f4;
+    --icon-fill-hover: #a6e3a1;
+}
+
 body {
     font-family: "JetBrains Mono", monospace;
     font-optical-sizing: auto;
@@ -6,24 +33,27 @@ body {
     max-width: 70%;
     margin: 40px auto;
     padding: 20px;
-    background-color: #fdf6e3;
-    color: #073642;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     position: relative;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .content {
     display: flex;
     padding: 20px;
-    box-shadow: 0 0px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 0px 20px var(--shadow-color);
+    transition: box-shadow 0.3s ease;
 }
 
 .line-numbers {
-    color: #002b36;
+    color: var(--line-number-color);
     text-align: right;
     padding-right: 20px;
-    border-right: 1px solid #ddd;
+    border-right: 1px solid var(--border-color);
     margin-right: 20px;
     user-select: none;
+    transition: color 0.3s ease, border-color 0.3s ease;
 }
 
 .line-number {
@@ -33,9 +63,10 @@ body {
 }
 
 h1, h2 {
-    color: #859900;
+    color: var(--heading-color);
     margin-bottom: 1rem;
     font-size: 1.8rem;
+    transition: color 0.3s ease;
 }
 
 p {
@@ -43,12 +74,105 @@ p {
 }
 
 a {
-    color: #6c71c4;
+    color: var(--link-color);
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 a:hover {
     text-decoration: underline;
+}
+
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    z-index: 1000;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sun-and-moon > :is(.moon, .sun, .sun-beams) {
+    transform-origin: center;
+}
+
+.sun-and-moon > :is(.moon, .sun) {
+    fill: var(--icon-fill);
+}
+
+.theme-toggle:is(:hover, :focus-visible) > .sun-and-moon > :is(.moon, .sun) {
+    fill: var(--icon-fill-hover);
+}
+
+.sun-and-moon > .sun-beams {
+    stroke: var(--icon-fill);
+    stroke-width: 2px;
+}
+
+.theme-toggle:is(:hover, :focus-visible) .sun-and-moon > .sun-beams {
+    stroke: var(--icon-fill-hover);
+}
+
+[data-theme="dark"] .sun-and-moon > .sun {
+    transform: scale(1.75);
+}
+
+[data-theme="dark"] .sun-and-moon > .sun-beams {
+    opacity: 0;
+}
+
+[data-theme="dark"] .sun-and-moon > .moon > circle {
+    transform: translateX(-7px);
+}
+
+@supports (cx: 1) {
+    [data-theme="dark"] .sun-and-moon > .moon > circle {
+        cx: 17;
+        transform: translateX(0);
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .sun-and-moon > .sun {
+        transition: transform .5s var(--ease-elastic-3);
+    }
+
+    .sun-and-moon > .sun-beams {
+        transition: transform .5s var(--ease-elastic-4), opacity .5s var(--ease-3);
+    }
+
+    .sun-and-moon .moon > circle {
+        transition: transform .25s var(--ease-out-5);
+    }
+
+    @supports (cx: 1) {
+        .sun-and-moon .moon > circle {
+            transition: cx .25s var(--ease-out-5);
+        }
+    }
+
+    [data-theme="dark"] .sun-and-moon > .sun {
+        transition-timing-function: var(--ease-3);
+        transition-duration: .25s;
+        transform: scale(1.75);
+    }
+
+    [data-theme="dark"] .sun-and-moon > .sun-beams {
+        transition-duration: .15s;
+        transform: rotateZ(-25deg);
+    }
+
+    [data-theme="dark"] .sun-and-moon > .moon > circle {
+        transition-duration: .5s;
+        transition-delay: .25s;
+    }
 }
 
 @media screen and (max-width: 1200px) {
@@ -84,5 +208,17 @@ a:hover {
 
     a {
         font-size: 1.4rem;
+    }
+
+    .theme-toggle {
+        top: 10px;
+        right: 10px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .sun-and-moon {
+        width: 28px;
+        height: 28px;
     }
 }
